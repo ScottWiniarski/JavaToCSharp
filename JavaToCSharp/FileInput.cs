@@ -2,10 +2,27 @@ namespace JavaToCSharp;
 
 public class FileInput
 {
-    // public string[] Lines;
-    // StreamReader sr = new StreamReader("animals.txt");
-    //
-    // Lines = File.ReadAllLines("animals.txt");
-
-
+     public void ReadFile(string[] input)
+     {
+          try
+          {
+               //Console.WriteLine("hello");
+               input.ToList().ForEach(n => Console.WriteLine(n));
+          }
+          catch(Exception ex)
+          {
+               Console.WriteLine("Exception Thrown: " + ex);
+          }
+          
+     }
+     
+     
 }
+
+
+     
+     /*StreamReader sr = new StreamReader("animals.txt");
+    
+     Lines = File.ReadAllLines("animals.txt"));*/
+
+
