@@ -5,11 +5,19 @@ using JavaToCSharp;
 
 string filePath = "C:/Users/Owner/RiderProjects/MobileApplications/JavaToCSharp/animals.txt";
 
+// TODO User Input section - calls upon user to enter data
+ITalkable userInput;
+UserChoice askUser = new UserChoice();
+userInput = askUser.UserObject();
+
 List<ITalkable> zoo = new List<ITalkable>();
 zoo.Add(new Dog(true,"Bean"));
 zoo.Add(new Cat(9,"Charlie"));
 zoo.Add(new Teacher(65,"Matt Green"));
+zoo.Add(userInput);
 
+
+// TODO - Writes data to file
 FileOutput writeFile = new FileOutput();
 List<string> output = new List<string>();
 foreach (ITalkable item in zoo)
