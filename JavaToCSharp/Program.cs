@@ -33,6 +33,7 @@ writeFile.WriteFile(filePath, output);
     
 }
 
+// TODO Issues with getting pathing to work outside of hard coding it and modifying it.
 /*string fileName = "animals.txt";
 string fullPath = Path.GetFullPath(fileName);
 Console.WriteLine("GetFullPath('{0} returns '{1}'", fileName, fullPath);
