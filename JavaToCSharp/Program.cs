@@ -5,6 +5,17 @@ using JavaToCSharp;
 
 string filePath = "C:/Users/Owner/RiderProjects/MobileApplications/JavaToCSharp/animals.txt";
 
+string fileName = "animals.txt";
+//string filePath = Path.GetFullPath(fileName).Replace(@"\", "/");
+string fullPath = Path.GetFullPath(fileName).Replace(@"\", "/");
+Console.WriteLine("GetFullPath('{0} returns '{1}'", fileName, fullPath);
+Console.WriteLine(fullPath.Replace(@"\", "/"));
+string[] newFilePath = File.ReadAllLines(fullPath);
+foreach (string file in newFilePath)
+{
+    Console.WriteLine(file);
+}
+
 // TODO User Input section - calls upon user to enter data
 ITalkable userInput;
 UserChoice askUser = new UserChoice();
@@ -33,16 +44,8 @@ writeFile.WriteFile(filePath, output);
     
 }
 
-// TODO Issues with getting pathing to work outside of hard coding it and modifying it.
-/*string fileName = "animals.txt";
-string fullPath = Path.GetFullPath(fileName);
-Console.WriteLine("GetFullPath('{0} returns '{1}'", fileName, fullPath);
-string[] fileByContentLine = File.ReadAllLines("C:/Users/Owner/RiderProjects/MobileApplications/JavaToCSharp/animals.txt");
-string[] fileByContentLine = File.ReadAllLines(fullPath.Replace(@"\\", "/"));*/
-
 // TODO - Reads data from file
 string[] readLineByLine = File.ReadAllLines(filePath);
 FileInput readFile = new FileInput();
-//readFile.ReadFile(fileByContentLine);
 readFile.ReadFile(readLineByLine);
 
